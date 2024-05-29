@@ -1,0 +1,125 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffc0cb;
+}
+.l{
+	color: black; /* Cambia il colore del testo del link */
+    font-style: italic;
+}
+.l:hover{
+	color:#f400a1;
+}
+main {
+    padding: 40px 0;
+    text-align: center;
+}
+
+section {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.p header {
+    background-color:  #333;
+}
+
+nav a.trovo {
+    color: #f400a1 ; 
+}
+
+.p .calculator {
+    background-color: #f9f9f9; /* Grigio chiaro */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.p .calculator h2 {
+    margin-bottom: 20px;
+}
+
+.p .form-group {
+    margin-bottom: 20px;
+}
+
+.p footer {
+    background-color: #333; /* Grigio scuro */
+    color: #fff; /* Bianco */
+    padding: 20px 0;
+}
+.p section {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.p section h2 {
+    margin-bottom: 20px;
+}
+.c{
+	max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+	 background-color: black;
+}

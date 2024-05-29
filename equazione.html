@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Calcolatore di Equazioni</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="stile.css">
+	<style>
+        header{
+            background-image: url('backgroundImage.jpg')
+        }
+       
+    </style>
+</head>
+<body class="p">
+    <header>
+        <div class= "c">
+            <h1>Risolutore di Equazioni</h1>
+			<br></br>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="equazione.html" class="trovo">Risoluzione equazioni</a></li>
+                    <li><a href="prob.html">Calcolo delle probabilità</a></li>
+                    <li><a href="log.html">Risoluzione di Logaritmi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>Risoluzione delle Equazioni</h2>
+                <form onsubmit="return solveFirstDegree();">
+                    <fieldset>
+                        <legend>Equazione di Primo Grado (ax + b = 0)</legend><br></br>
+                        <p><label for="a1"></label>
+                        <input type="number" id="a1" required>x + 
+                        <label for="b1"></label>
+                        <input type="number" id="b1" required> =0</p><br></br>
+                        <input type="submit" value="Risolvi">
+                        <input type="reset" value="Cancella">
+						<br></br>
+                    </fieldset>
+					<br></br>
+                    <p id="result1"></p>
+                </form>
+                <br></br>
+                <form onsubmit="return solveSecondDegree();">
+                    <fieldset>
+                        <legend>Equazione di Secondo Grado (ax² + bx + c = 0)</legend><br></br>
+                        <label for="a2"></label>
+                        <p><input type="number" id="a2" required>x² + 
+                        <label for="b2"></label>
+                        <input type="number" id="b2" required>x + 
+                        <label for="c2"></label>
+                        <input type="number" id="c2" required> =0</p><br></br>
+                        <input type="submit" value="Risolvi">
+                        <input type="reset" value="Cancella">
+						<br></br>
+                    </fieldset>
+					<br></br>
+                    <p id="result2"></p>
+                </form>
+				<br></br>
+				<a href="te.html" class="l">Teoria sulle equazioni di primo e secondo grado</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Valerio Anna</p>
+        </div>
+    </footer>
+
+    <script>
+        function solveFirstDegree() {
+            var a = parseFloat(document.getElementById('a1').value);
+            var b = parseFloat(document.getElementById('b1').value);
+            var result = document.getElementById('result1');
+
+            if (a === 0) {
+                result.innerHTML = 'Il valore di a non può essere 0.';
+            } else {
+                var x = -b / a;
+                result.innerHTML = 'La soluzione è x = ' + x;
+            }
+            return false;
+        }
+
+        function solveSecondDegree() {
+            var a = parseFloat(document.getElementById('a2').value);
+            var b = parseFloat(document.getElementById('b2').value);
+            var c = parseFloat(document.getElementById('c2').value);
+            var discriminant = b * b - 4 * a * c;
+            var result = document.getElementById('result2');
+
+            if (a === 0) {
+                result.innerHTML = 'Il valore di a non può essere 0.';
+            } else if (discriminant > 0) {
+                var x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                var x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                result.innerHTML = 'Le soluzioni sono x1 = ' + x1 + ' e x2 = ' + x2;
+            } else if (discriminant === 0) {
+                var x = -b / (2 * a);
+                result.innerHTML = 'La soluzione è x = ' + x;
+            } else {
+                result.innerHTML = 'Non ci sono soluzioni reali.';
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

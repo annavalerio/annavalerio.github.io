@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calcolo delle probabilità</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stile.css">
+	<style>
+        header{
+            background-image: url('backgroundImage.jpg')
+        }
+       
+    </style>
+</head>
+<body class="p">
+<header>
+    <div class= "c">
+        <h1>Calcolo delle probabilità</h1>
+        <br></br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="equazione.html">Risoluzione equazioni</a></li>
+                <li><a href="prob.html" class="trovo">Calcolo delle probabilità</a></li>
+                <li><a href="log.html">Risoluzione di Logaritmi</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <section class="calculator">
+            <h2>Calcolo delle probabilità</h2>
+            <form id="probabilityForm" onsubmit="event.preventDefault(); calculateProbability();">
+                <div class="form-group">
+                    <label for="success">Eventi favorevoli (Successi):</label>
+                    <input type="number" id="success" required>
+                </div>
+                <div class="form-group">
+                    <label for="total">Numero totale di eventi:</label>
+                    <input type="number" id="total" required>
+                </div>
+                <button type="submit">Calcola Probabilità</button> <br></br>
+            </form>
+            <div id="result"></div>
+			<a href="tp.html" class="l">Introduzione alla probabilità</a>
+        </section>
+    </div>
+</main>
+
+<script>
+    function calculateProbability() {
+        var success = parseInt(document.getElementById('success').value);
+        var total = parseInt(document.getElementById('total').value);
+
+        if (total === 0) {
+            document.getElementById('result').innerHTML = '<p>Impossibile calcolare la probabilità quando il numero totale di eventi è zero.</p>';
+            return;
+        }
+
+        var probability = (success / total) * 100;
+
+        document.getElementById('result').innerHTML = '<p>La probabilità è: ' + probability.toFixed(2) + '%' + '</p>';
+    }
+</script>
+<footer>
+    <p>&copy; 2024 Valerio Anna</p>
+</footer>
+</body>
+</html>

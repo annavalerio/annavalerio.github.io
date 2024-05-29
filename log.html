@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Risolutore di logaritmi</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="stile.css">
+	<style>
+        header{
+            background-image: url('backgroundImage.jpg')
+        }
+       
+    </style>
+</head>
+<body class="p">
+    <header>
+        <div class= "c">
+            <h1>Risolutore di Logaritmi</h1>
+			<br></br>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="equazione.html">Risoluzione equazioni</a></li>
+                    <li><a href="prob.html">Calcolo delle probabilità</a></li>
+                    <li><a href="log.html" class="trovo">Risoluzione di Logaritmi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="calculator">
+                <h2>Risolutore di Logaritmi</h2>
+                <form onsubmit="calculateLog(); return false;">
+                    <div class="form-group">
+                        <label for="base">Base del logaritmo:</label>
+                        <input type="number" id="base" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="result">Risultato del logaritmo:</label>
+                        <input type="number" id="result" required>
+                    </div>
+                    <button type="submit">Calcola Logaritmo</button><br></br>
+                </form>
+                <div id="logResult"></div>
+				<a href="tl.html" class="l">Introduzione ai Logaritmi</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Valerio Anna</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateLog() {
+            var base = parseFloat(document.getElementById('base').value);
+            var result = parseFloat(document.getElementById('result').value);
+
+            if (base > 0 && base !== 1 && result > 0) {
+                var logarithm = Math.log(result) / Math.log(base);
+                document.getElementById('logResult').innerHTML = '<p>Il logaritmo è: ' + logarithm.toFixed(2) + '</p>';
+            } else {
+                document.getElementById('logResult').innerHTML = '<p>Errore: Il logaritmo non è definito per questi valori.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
